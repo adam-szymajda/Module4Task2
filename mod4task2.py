@@ -19,12 +19,12 @@ def divide(a, b):
     return a / b
 
 def input_number(txt):
-    number = input("Podaj {}: ".format(txt))
-    if not pattern.fullmatch(number):
-        print("NaN")
-        exit(1)
-    else:
-        return number
+    while True:
+        number = input("Podaj {}: ".format(txt))
+        if not pattern.fullmatch(number):
+            print("NaN")
+        else:
+            return float(number)
 
 
 
@@ -39,8 +39,8 @@ if __name__ == "__main__":
         elif choice in ['1', '2', '3', '4']:
             # a = float(input("Podaj a: "))
             # b = float(input("Podaj b: "))
-            a = float(input_number('a'))
-            b = float(input_number('b'))
+            a = input_number('a')
+            b = input_number('b')
             if choice == '1':
                 print("WYNIK: ", add(a, b))
             elif choice == '2':
