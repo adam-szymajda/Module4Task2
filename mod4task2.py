@@ -21,7 +21,13 @@ def divide(a, b):
 def input_number(txt):
     while True:
         number = input("Podaj {}: ".format(txt))
-        if not pattern.fullmatch(number):
+        # if not pattern.fullmatch(number):
+        #     print("NaN")
+        # else:
+        #     return float(number)
+        try:
+            float(number)
+        except:
             print("NaN")
         else:
             return float(number)
@@ -30,7 +36,7 @@ def input_number(txt):
 
 if __name__ == "__main__":
 
-    pattern = re.compile(r'((-)?\d+(\.\d+)?)|(\.\d+)|((-)?\d+e(-)?\d+)')
+    # pattern = re.compile(r'((-)?\d+(\.\d+)?)|(\.\d+)|((-)?\d+e(-)?\d+)')
 
     while True:
         choice = input("Podaj działanie, posługując się odpowiednią liczbą:\n a .. b = c\n 1 Dodawanie (+)\n 2 Odejmowanie (-)\n 3 Mnożenie (*)\n 4 Dzielenie (/)\n 0 Zakończ\n:")
